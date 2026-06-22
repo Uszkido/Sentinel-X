@@ -1,0 +1,180 @@
+:root {
+    --primary: #00f2ff;
+    --danger: #ff4d4d;
+    --bg: #050a0f;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* PORTAL STYLES */
+.portal-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, #00f2ff11 0%, transparent 70%);
+    z-index: -1;
+}
+
+.portal-content {
+    text-align: center;
+    max-width: 1000px;
+    padding: 40px;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 15px;
+    color: var(--primary);
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.enter-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 20px 50px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.enter-button:hover {
+    background: var(--primary);
+    color: var(--bg);
+    box-shadow: 0 0 30px var(--primary);
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 80px;
+}
+
+.pillar-card {
+    background: var(--glass);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* DASHBOARD STYLES */
+.sentinel-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.map-container {
+    flex: 3;
+    background: #111;
+}
+
+.sidebar {
+    width: 400px;
+    padding: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+}
+
+.status-badge {
+    color: var(--primary);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.back-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+/* FADE IN ANIMATIONS */
+.fade-in {
+    animation: fi 1s forwards;
+}
+
+.fade-in-delayed {
+    animation: fi 1s 0.5s forwards;
+    opacity: 0;
+}
+
+@keyframes fi {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
