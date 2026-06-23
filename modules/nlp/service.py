@@ -1,7 +1,9 @@
+import requests
 from faster_whisper import WhisperModel
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from sentinel_x.core.config import settings
 import torch
+import json
 
 class NLPService:
     def __init__(self):
@@ -9,10 +11,12 @@ class NLPService:
         self.whisper_model = WhisperModel(settings.WHISPER_MODEL, device="cpu", compute_type="int8")
         
         # Initialize AfroXLMR for multilingual threat detection
-        # This model is great for code-switching and Nigerian languages
+        # This model is great for code-switching and Nigerian languages (Hausa, Yoruba, Igbo)
         self.threat_tokenizer = AutoTokenizer.from_pretrained("Davlan/afro-xlmr-large")
-        # Placeholder for a fine-tuned model; using a generic one for now
         self.classifier = pipeline("sentiment-analysis", model="Davlan/afro-xlmr-large")
+        
+        # Ollama local API (Open Source LLM Runner)
+        self.ollama_url = "http://localhost:11434/api/generate"
 
     def transcribe_audio(self, audio_path: str):
         """
@@ -25,6 +29,21 @@ class NLPService:
             "language": info.language,
             "probability": info.language_probability
         }
+
+    def analyze_intelligence(self, text: str):
+        """
+        Perform advanced reasoning on intelligence text using local Ollama LLM.
+        """
+        prompt = f"Analyze this incident report for national security implications: {text}"
+        try:
+            response = requests.post(
+                self.ollama_url,
+                json={"model": "llama3", "prompt": prompt, "stream": False},
+                timeout=10
+            )
+            return response.json().get("response", "Reasoning unavailable.")
+        except Exception as e:
+            return f"Local Reasoning Offline: {str(e)}"
 
     def detect_threats(self, text: str):
         """

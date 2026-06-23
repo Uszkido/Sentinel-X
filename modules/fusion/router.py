@@ -40,7 +40,15 @@ async def get_reports(limit: int = 10):
     from sentinel_x.db.mongodb import get_database
     db = get_database()
     reports = await db.intelligence.find().sort("timestamp", -1).to_list(limit)
-    # Convert ObjectId to string
     for r in reports:
         r["_id"] = str(r["_id"])
     return reports
+
+@router.post("/train")
+async def trigger_learning():
+    """
+    Trigger a continuous learning cycle using captured data.
+    """
+    from sentinel_x.modules.fusion.anomaly import anomaly_detector
+    await anomaly_detector.continuous_learning()
+    return {"status": "Continuous learning cycle triggered", "model": "IsolationForest"}

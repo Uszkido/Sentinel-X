@@ -1,95 +1,56 @@
-# 🛡️ SENTINEL-X — Multimodal AI Intelligence Platform
+# 🛡️ SENTINEL-X | Multimodal Intelligence Platform
+**Autonomous Proactive Threat Detection | Multi-Drone Swarm & C4ISR Core**
 
-SENTINEL-X is a unified, production-grade AI platform designed for national security, climate monitoring, and sustainability in Nigeria and across Africa. It fuses real-time computer vision, NLP, satellite intelligence, and explainable AI into a single actionable intelligence core.
-
-## 🚀 Key Pillars
-
-- **👁️ Multimodal Computer Vision**: YOLOv8 + SAM for real-time person tracking, crowd density, and threat detection.
-- **📡 Remote Sensing**: Direct ESA Sentinel-2 ingestion for NDVI analysis and land-use change detection.
-- **🎙️ Multilingual NLP**: Faster-Whisper + AfroXLMR for transcribing and scoring sentiment across Hausa, Yoruba, Igbo, and English.
-- **🤝 Unified Fusion**: A "Single Brain" ingestion engine that correlates vision, audio, and satellite data.
-- **🔍 Explainable AI (XAI)**: SHAP-based attribution to explain *why* the AI flags specific events.
-- **🔒 Federated Learning**: Privacy-preserving model training across distributed nodes (Coming Soon).
+Sentinel-X is a production-grade, open-source multimodal intelligence system designed for national security, agrarian conflict prediction, and urban defense. It bridges the gap between field sensors (IP Cameras, Satellites, Acoustic) and autonomous tactical response.
 
 ---
 
-## 🛠️ Tech Stack (100% Free & Open Source)
+## 🚀 Key "Grandmaster" Features
+Sentinel-X isn't just a monitoring tool; it's a proactive intelligence ecosystem.
 
-- **Backend**: FastAPI, Uvicorn
-- **Intelligence**: PyTorch, Ultralytics, Transformers, Faster-Whisper, SHAP
-- **Data**: MongoDB (NoSQL), Redis (Task Queue)
-- **GIS**: Rasterio, GDAL, Sentinelsat
-- **Deployment**: Local Virtualenv / Manual (Optimized for Bare Metal)
+### 🌐 3D Digital Twin Situational Awareness
+- **Engine**: Powered by **CesiumJS**.
+- **Capability**: Renders high-fidelity 3D models of priority sectors (e.g., Abuja) with real-time terrain shading and tactical data overlays.
 
----
+### 🚁 Autonomous Drone Swarms
+- **Swarm Intelligence**: Coordinated mission profiles including **CIRCLE** (360° surveillance) and **GRID** (area search).
+- **Target Locking**: Predictive trajectory estimation using Kalman-filtering patterns to maintain visual contact on moving targets.
 
-## 📂 Project Structure
+### 🎯 High-Precision AI Suite
+- **SAHI (Sliced Aided Hyper Inference)**: Detects tiny objects (weapons, pedestrians) in massive 4K/8K aerial feeds.
+- **Super-Resolution (SR)**: AI-driven upscaling (2x) of target crops for pinpoint identification.
+- **Cross-Sensor Re-ID**: Persistent "Soft Attribute Signatures" to track the same target across drones and ground CCTV.
 
-```text
-sentinel_x/
-├── api/                # FastAPI routes and versioning
-├── core/               # App configuration and global security
-├── db/                 # MongoDB/NoSQL connection logic
-├── modules/            # The 6 core technical pillars
-│   ├── vision/         # Computer Vision Service
-│   ├── nlp/            # Speech & NLP Service
-│   ├── satellite/      # Remote Sensing Service
-│   ├── xai/            # Explainable AI Service
-│   └── fusion/         # Intel Orchestration Service
-├── tests/              # Pytest suite
-└── main.py             # Application entry point
-```
+### 🔊 Kinetic Event Triangulation
+- **Acoustic Pinpointing**: Mathematical triangulation of gunshot or explosion origins using Signal Strength (RSSI) from distributed acoustic sensors.
+- **Auto-Response**: Automatically dispatches a drone swarm to the exact GPS origin of kinetic events.
 
----
+### 🛡️ Professional Defense & C4ISR
+- **MIL-STD-2525D Symbology**: Standardized tactical icons for all mapped assets.
+- **ATAK / CoT Integration**: Push intelligence findings directly to field agents via **Cursor-on-Target** XML for Android Tactical Assault Kit.
+- **SIGINT (Signals Intelligence)**: Monitors RF frequency spikes to find hidden electronic signatures.
 
-## 🛠️ Getting Started for Contributors
-
-### 1. Prerequisites
-- Python 3.10+
-- MongoDB installed and running locally
-- Redis installed and running locally
-
-### 2. Installation
-```bash
-# Clone the repository
-git clone https://github.com/Uszkido/sentinel-x.git
-cd sentinel-x
-
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 3. Environment Setup
-Create a `.env` file based on `.env.example`:
-```bash
-cp .env.example .env
-```
-
-### 4. Running the Platform
-```bash
-python main.py
-```
-Access the API docs at `http://localhost:8000/docs`.
+### 👥 Crowd Behavioral Intelligence
+- **Density Mapping**: PPSM (Persons Per Square Meter) monitoring for urban safety.
+- **Panic Detection**: Automated alerting for velocity spikes, stampedes, or crowd turbulence.
 
 ---
 
-## 🤝 Contributing
+## 🛠️ Technology Stack
+- **Backend**: Python 3.11+, FastAPI, MongoDB.
+- **Frontend**: PHP, Javascript (CesiumJS, Leaflet), Vanilla CSS.
+- **AI Models**: YOLOv8/v11, Transformers, Rasterio (GIS), Scikit-Learn.
+- **Protocols**: RTSP, MAVLink, CoT (Cursor-on-Target), ONVIF.
 
-We welcome contributions from the African AI community! 
-1. Fork the repo.
-2. Create your feature branch (`git checkout -b feature/amazing-feature`).
-3. Commit your changes (`git commit -m 'Add amazing feature'`).
-4. Push to the branch (`git push origin feature/amazing-feature`).
-5. Open a Pull Request.
+## 🤝 Contribution Guidelines
+Sentinel-X is **100% Open Source**. We welcome contributions in:
+- **Vision Skills**: New YOLO/SAM models for specific object identification.
+- **Drone Protocols**: Support for PX4/ArduPilot hardware integration.
+- **NLP**: Local LLM fine-tuning for tactical reporting.
+- **GIS**: Enhanced satellite change detection algorithms.
+
+## 📜 License
+Apache License 2.0 - Open and free for all to contribute and build upon.
 
 ---
-
-## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-**Developed with ❤️ for Nigeria by [Uszkido](https://github.com/Uszkido)**
+**Developed by [Your Name] | Sentinel-X Project Team**

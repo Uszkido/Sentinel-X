@@ -1,16 +1,28 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-.env
-.venv
 venv/
-ENV/
-*.pt
-*.pth
-*.weights
-temp_*
-data/
-logs/
+env/
+.env
+
+# Mobile / Android
+*.apk
+*.aar
+*.jks
+
+# IDEs
 .vscode/
 .idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log
+logs/
+
+# Database
+data/
+mongodb_data/

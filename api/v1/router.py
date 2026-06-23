@@ -4,6 +4,8 @@ from sentinel_x.modules.nlp.router import router as nlp_router
 from sentinel_x.modules.fusion.router import router as fusion_router
 from sentinel_x.modules.xai.router import router as xai_router
 from sentinel_x.modules.federated.router import router as federated_router
+from sentinel_x.modules.drone.router import router as drone_router
+from sentinel_x.modules.iot.router import router as iot_router
 from sentinel_x.api.v1.endpoints.auth import router as auth_router
 
 api_router = APIRouter()
@@ -18,3 +20,5 @@ api_router.include_router(nlp_router, prefix="/nlp", tags=["nlp"])
 api_router.include_router(fusion_router, prefix="/fusion", tags=["fusion"])
 api_router.include_router(xai_router, prefix="/xai", tags=["xai"])
 api_router.include_router(federated_router, prefix="/federated", tags=["federated"])
+api_router.include_router(drone_router, prefix="/drone", tags=["drone"])
+api_router.include_router(iot_router, prefix="/iot", tags=["iot"])

@@ -60,3 +60,4 @@ scipy
 matplotlib
 scikit-learn
 pytest
+requests
