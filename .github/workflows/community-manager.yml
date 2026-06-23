@@ -1,0 +1,38 @@
+name: Open Source Community Manager
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome-message:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull_requests: write
+    steps:
+      - name: Welcome New Issue
+        if: github.event.issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "👋 Welcome to the **Sentinel-X Intelligence Platform**! \n\nThank you for opening this issue. Our maintainers will review it shortly. If you're interested in contributing, please check our **CONTRIBUTING.md** guidelines."
+            })
+
+      - name: Welcome New PR
+        if: github.event.pull_request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "🚀 Great work! Thank you for your contribution to **Sentinel-X**. \n\nA maintainer will review your Pull Request as soon as possible. Please ensure your intelligence modules follow the standard fusion architecture."
+            })
