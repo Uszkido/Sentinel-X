@@ -53,4 +53,4 @@ Sentinel-X is **100% Open Source**. We welcome contributions in:
 Apache License 2.0 - Open and free for all to contribute and build upon.
 
 ---
-**Developed by [Your Name] | Sentinel-X Project Team**
+**Developed by Usama Ado Shehu | Sentinel-X Project- Team Vexel Innovation**
